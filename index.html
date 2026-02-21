@@ -9,31 +9,210 @@
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
   <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
   <link href="https://cdn.jsdelivr.net/npm/daisyui@5/themes.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css" integrity="sha512-kJlvECunwXftkPwyvHbclArO8wszgBGisiLeuDFwNM8ws+wKIw0sv1os3ClWZOcrEB2eRXULYUsm8OVRGJKwGA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <title>Assignment4</title>
   <link rel="stylesheet" href="./style.css">
 </head>
-<body class="inter bg-[#f8fafc]">
+<body class="inter bg-[#F8FAFC]">
 
-  <header class="max-w-[1110px] mx-auto mt-15">
-    <h1 class="font-bold text-[32px] text-center md:text-left">Apurba Ovi</h1>
+  <header class="max-w-[1110px] mx-auto mt-15 border-b-2 pb-8 border-gray-200">
+    <h1 class="font-bold text-[32px] text-center md:text-left">Job Application Tracker</h1>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-      <div class="max-w-[360px] h-[97px] p-5 rounded-lg border">
+      <div class="max-w-[360px] h-[97px] p-5 rounded-lg bg-white">
         <p class="text-[14px] font-medium text-[#323B49]">Total</p>
         <h2 class="font-bold text-[31px] mt-1.5">8</h2>
       </div>
-      <div class="max-w-[360px] h-[97px] p-5 rounded-lg border">
-        <p class="text-[14px] font-medium text-[#323B49]">InterView</p>
+      <div class="max-w-[360px] h-[97px] p-5 rounded-lg bg-white">
+        <p class="text-[14px] font-medium text-[#323B49]">Interview</p>
         <h2 class="font-bold text-[31px] mt-1.5 text-[#10B981]">0</h2>
       </div>
-      <div class="max-w-[360px] h-[97px] p-5 rounded-lg border">
+      <div class="max-w-[360px] h-[97px] p-5 rounded-lg bg-white">
         <p class="text-[14px] font-medium text-[#323B49]">Rejected</p>
         <h2 class="font-bold text-[31px] mt-1.5 text-[#EF4444]">0</h2>
       </div>
     </div>
   </header>
 
+  <div class="max-w-[1110px] mx-auto mt-18"> 
+    <div class="w-full flex justify-between items-center">
+      <h1 class="font-medium text-[26px]">Available Jobs</h1>
+      <p class="font-medium text-[#64748B]">8 Jobs</p>
+    </div>
+    <div class="mt-6 flex justify-start">
+      <button onclick="showOnly('all')" id="btn1" class="w-20 bg-white  h-8 text-center text-[#64748B] text-[12px] font-medium flex justify-center items-center rounded-xs mr-2">All</button>
+      <button onclick="showOnly('interview')" id="btn2" class="w-20 bg-white h-8 text-center text-[#64748B] text-[12px] font-medium flex justify-center items-center rounded-xs mr-2">Interview</button>
+      <button onclick="showOnly('rejected')" id="btn3" class="w-20 bg-white h-8 text-center text-[#64748B] text-[12px] font-medium flex justify-center items-center rounded-xs mr-2">Rejected</button>
+    </div>
+  </div>
 
+  <section id="all" class="max-w-[1110px] mx-auto mb-15">
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">Mobile First Corp</h2>
+        <p class="text-[#64748B] text-[22px]">React Native Developer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">Remote
+ • Full-time • $130,000 - $175,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Build cross-platform mobile applications using React Native. Work on products used by millions of users worldwide.</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">WebFlow Agency</h2>
+        <p class="text-[#64748B] text-[22px]">Web Designer & Developer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">Los Angeles, CA • Part-time • $80,000 - $120,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Create stunning web experiences for high-profile clients. Must have portfolio and experience with modern web design trends.</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">DataViz Solutions</h2>
+        <p class="text-[#64748B] text-[22px]">Data Visualization Specialist</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">Boston, MA • Full-time • $125,000 - $165,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Transform complex data into compelling visualizations. Required skills: D3.js, React, and strong analytical thinking.
+</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">CloudFirst Inc</h2>
+        <p class="text-[#64748B] text-[22px]">Backend Developer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">Seattle, WA • Full-time • $140,000 - $190,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Design and maintain scalable backend systems using Python and AWS. Work with modern DevOps practices and cloud infrastructure.
+</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">Innovation Labs</h2>
+        <p class="text-[#64748B] text-[22px]">UI/UX Engineer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">Austin, TX • Full-time • $110,000 - $150,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Create beautiful and functional user interfaces for our suite of products. Strong design skills and frontend development expertise required.
+</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">MegaCorp Solutions</h2>
+        <p class="text-[#64748B] text-[22px]">JavaScript Developer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">New York, NY • Full-time • $130,000 - $170,00</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Build enterprise applications with JavaScript and modern frameworks. We offer competitive compensation, health insurance, and professional development opportunities.
+</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">StartupXYZ</h2>
+        <p class="text-[#64748B] text-[22px]">Full Stack Engineer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">Remote • Full-time • $120,000 - $160,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">Join our fast-growing startup and work on our core platform. Experience with Node.js and React required. Great benefits and equity package included.
+</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  <div class="w-full my-4 bg-white p-6 ">
+    <div class="flex justify-between items-center">
+      <div>
+        <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">TechCorp Industries</h2>
+        <p class="text-[#64748B] text-[22px]">Senior Frontend Developer</p>
+      </div>
+      <div id="delete">
+        <i class="ri-delete-bin-6-line rounded-full"></i>
+      </div>
+    </div>
+    <p class="text-[#64748B] text-[20px] my-5">San Francisco, CA • Full-time • $130,000 - $175,000</p>
+ <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">NOT APPLIED</div>
+ <p class="text-[#323B49] text-[20px] my-5">We are looking for an experienced Frontend Developer to build scalable web applications using React and TypeScript. You will work with a talented team on cutting-edge projects.
+</p>
+ <div class="w-[232px] flex justify-between">
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#10B981] border border-[#10B981]">INTERVIEW</div>
+  <div class="w-[113px] h-9 bg-white rounded flex justify-center items-center font-semibold text-[14px] text-[#EF4444] border border-[#EF4444]">REJECTED</div>
+ </div>
+  </div>
+  </section>
 
+  <section id="interview" class="hidden max-w-[1110px] h-100 mx-auto mb-[133px] text-center py-26 bg-white">
+    <div class="w-full flex justify-center">
+      <img src="./jobs.png" alt="">
+    </div>
+    <h2 class="font-semibold text-[32px] text-[#002C5C]">No jobs available</h2>
+    <p class="text-[22px] text-[#64748B]">Check back soon for new job opportunities</p>
+  </section>
+  <section id="rejected" class="max-w-[1110px] h-100 mx-auto mb-[133px] text-center py-26 bg-white hidden">
+    <div class="w-full flex justify-center">
+      <img src="./jobs.png" alt="">
+    </div>
+    <h2 class="font-semibold text-[32px] text-[#002C5C]">No jobs available</h2>
+    <p class="text-[22px] text-[#64748B]">Check back soon for new job opportunities</p>
+  </section>
   <script src="./machine.js"></script>
   <script src="./script.js"></script>
 </body>

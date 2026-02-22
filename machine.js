@@ -105,7 +105,7 @@ function createInterview() {
     card.innerHTML = `
       <div class="flex justify-between items-center">
         <div>
-          <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">
+          <h2 class="text-[26px] font-bold mb-1 text-[#002C5C] text-left">
             ${job.company}
           </h2>
           <p class="text-[#64748B] text-[22px]">
@@ -116,7 +116,7 @@ function createInterview() {
         </div>
       </div>
 
-      <p class="text-[#64748B] text-[20px] my-5">
+      <p class="text-[#64748B] text-[20px] my-5 text-left">
         ${job.location} • ${job.type} • ${job.salary}
       </p>
 
@@ -124,19 +124,19 @@ function createInterview() {
         ${job.status}
       </div>
 
-      <p class="text-[#323B49] text-[20px] my-5">
+      <p class="text-[#323B49] text-[20px] my-5 text-justify">
         ${job.description}
       </p>
 
-      <div class="w-[232px] flex justify-between">
-        <button class="interview-btn btn btn-outline btn-accent" data-id="${job.id}">
-          INTERVIEW
-        </button>
+      <div class="flex gap-3">
+  <button class="interview-btn btn btn-outline btn-accent" data-id="${job.id}">
+    INTERVIEW
+  </button>
 
-        <button class="reject-btn btn btn-outline btn-error" data-id="${job.id}">
-          REJECTED
-        </button>
-      </div>
+  <button class="reject-btn btn btn-outline btn-error" data-id="${job.id}">
+    REJECTED
+  </button>
+</div>
     `;
 
     section.appendChild(card);
@@ -159,7 +159,7 @@ function createRejected() {
     card.innerHTML = `
       <div class="flex justify-between items-center">
         <div>
-          <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">
+          <h2 class="text-[26px] font-bold mb-1 text-[#002C5C] text-left">
             ${job.company}
           </h2>
           <p class="text-[#64748B] text-[22px]">
@@ -170,7 +170,7 @@ function createRejected() {
         </div>
       </div>
 
-      <p class="text-[#64748B] text-[20px] my-5">
+      <p class="text-[#64748B] text-[20px] my-5 text-left">
         ${job.location} • ${job.type} • ${job.salary}
       </p>
 
@@ -178,19 +178,19 @@ function createRejected() {
         ${job.status}
       </div>
 
-      <p class="text-[#323B49] text-[20px] my-5">
+      <p class="text-[#323B49] text-[20px] my-5 text-justify">
         ${job.description}
       </p>
 
-      <div class="w-[232px] flex justify-between">
-        <button class="interview-btn btn btn-outline btn-accent" data-id="${job.id}">
-          INTERVIEW
-        </button>
+      <div class="flex gap-3">
+  <button class="interview-btn btn btn-outline btn-accent" data-id="${job.id}">
+    INTERVIEW
+  </button>
 
-        <button class="reject-btn btn btn-outline btn-error" data-id="${job.id}">
-          REJECTED
-        </button>
-      </div>
+  <button class="reject-btn btn btn-outline btn-error" data-id="${job.id}">
+    REJECTED
+  </button>
+</div>
     `;
 
     section.appendChild(card);

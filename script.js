@@ -106,25 +106,22 @@ function updateJobCount() {
   document.querySelector("#main2").textContent = `${interviewJobs.length}`;
   document.querySelector("#main3").textContent = `${rejectedJobs.length}`;
 }
-document.getElementById("all").addEventListener("click", function (e) {
+document.addEventListener("click", function (e) {
 
   const deleteBtn = e.target.closest(".delete-btn");
   const interviewBtn = e.target.closest(".interview-btn");
   const rejectBtn = e.target.closest(".reject-btn");
 
-  // Delete Button
+  // Delete Section
   if (deleteBtn) {
     const id = Number(deleteBtn.dataset.id);
 
-    // main jobs teke remove korlam
     const index = jobs.findIndex(j => j.id === id);
     if (index !== -1) jobs.splice(index, 1);
 
-    // interviewJobs teikkao
     const iIndex = interviewJobs.findIndex(j => j.id === id);
     if (iIndex !== -1) interviewJobs.splice(iIndex, 1);
 
-    // rejectedJobs teikkao
     const rIndex = rejectedJobs.findIndex(j => j.id === id);
     if (rIndex !== -1) rejectedJobs.splice(rIndex, 1);
 
@@ -134,46 +131,48 @@ document.getElementById("all").addEventListener("click", function (e) {
     updateJobCount();
   }
 
-  // InterView Button
+  // Interview Section
   if (interviewBtn) {
     const id = Number(interviewBtn.dataset.id);
     const job = jobs.find(j => j.id === id);
 
-    if (job) {
-      job.status = "INTERVIEW";
+    if (!job) return;
 
-      const rIndex = rejectedJobs.findIndex(j => j.id === id);
-      if (rIndex !== -1) rejectedJobs.splice(rIndex, 1);
+    job.status = "INTERVIEW";
 
-      if (!interviewJobs.some(j => j.id === id)) {
-        interviewJobs.push(job);
-      }
-      createJob(jobs);
-      createInterview();
-      createRejected();
-      updateJobCount();   
+    const rIndex = rejectedJobs.findIndex(j => j.id === id);
+    if (rIndex !== -1) rejectedJobs.splice(rIndex, 1);
+
+    if (!interviewJobs.some(j => j.id === id)) {
+      interviewJobs.push(job);
     }
+
+    createJob(jobs);
+    createInterview();
+    createRejected();
+    updateJobCount();
   }
 
-  // Rejected Button
+  // Reject Section
   if (rejectBtn) {
     const id = Number(rejectBtn.dataset.id);
     const job = jobs.find(j => j.id === id);
 
-    if (job) {
-      job.status = "REJECTED";
+    if (!job) return;
 
-      const iIndex = interviewJobs.findIndex(j => j.id === id);
-      if (iIndex !== -1) interviewJobs.splice(iIndex, 1);
+    job.status = "REJECTED";
 
-      if (!rejectedJobs.some(j => j.id === id)) {
-        rejectedJobs.push(job);
-      }
-      createJob(jobs);
-      createInterview();
-      createRejected();
-      updateJobCount();    
+    const iIndex = interviewJobs.findIndex(j => j.id === id);
+    if (iIndex !== -1) interviewJobs.splice(iIndex, 1);
+
+    if (!rejectedJobs.some(j => j.id === id)) {
+      rejectedJobs.push(job);
     }
+
+    createJob(jobs);
+    createInterview();
+    createRejected();
+    updateJobCount();
   }
 
 });

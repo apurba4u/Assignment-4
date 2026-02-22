@@ -7,3 +7,11 @@
   background-color: #3B82F6;
   color: #ffffffd6;
 }
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+html {
+  background-color: #F8FAFC;
+}

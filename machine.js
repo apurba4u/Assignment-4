@@ -75,7 +75,7 @@ function showEmpty(sectionId) {
   const section = document.getElementById(sectionId);
 
   section.innerHTML = `
-    <div id="common" class="text-center my-10">
+    <div id="common" class="text-center my-10 py-26">
       <div class="w-full flex justify-center">
         <img src="./jobs.png" alt="">
       </div>
@@ -99,16 +99,47 @@ function createInterview() {
   section.innerHTML = "";
 
   interviewJobs.forEach(job => {
-    const div = document.createElement("div");
-    div.className = "w-full my-4 bg-white p-6";
+    const card = document.createElement("div");
+    card.className = "w-full my-4 bg-white p-6 bg-white";
 
-    div.innerHTML = `
-      <h2 class="text-xl font-bold">${job.company}</h2>
-      <p>${job.role}</p>
-      <p class="text-green-600 font-semibold">${job.status}</p>
+    card.innerHTML = `
+      <div class="flex justify-between items-center">
+        <div>
+          <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">
+            ${job.company}
+          </h2>
+          <p class="text-[#64748B] text-[22px]">
+            ${job.role}
+          </p>
+        </div>
+        <div class="delete-btn cursor-pointer" data-id="${job.id}">
+        </div>
+      </div>
+
+      <p class="text-[#64748B] text-[20px] my-5">
+        ${job.location} • ${job.type} • ${job.salary}
+      </p>
+
+      <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">
+        ${job.status}
+      </div>
+
+      <p class="text-[#323B49] text-[20px] my-5">
+        ${job.description}
+      </p>
+
+      <div class="w-[232px] flex justify-between">
+        <button class="interview-btn btn btn-outline btn-accent" data-id="${job.id}">
+          INTERVIEW
+        </button>
+
+        <button class="reject-btn btn btn-outline btn-error" data-id="${job.id}">
+          REJECTED
+        </button>
+      </div>
     `;
 
-    section.appendChild(div);
+    section.appendChild(card);
   });
 }
 function createRejected() {
@@ -122,15 +153,46 @@ function createRejected() {
   section.innerHTML = "";
 
   rejectedJobs.forEach(job => {
-    const div = document.createElement("div");
-    div.className = "w-full my-4 bg-white p-6";
+    const card = document.createElement("div");
+    card.className = "w-full my-4 bg-white p-6 bg-white";
 
-    div.innerHTML = `
-      <h2 class="text-xl font-bold">${job.company}</h2>
-      <p>${job.role}</p>
-      <p class="text-red-600 font-semibold">${job.status}</p>
+    card.innerHTML = `
+      <div class="flex justify-between items-center">
+        <div>
+          <h2 class="text-[26px] font-bold mb-1 text-[#002C5C]">
+            ${job.company}
+          </h2>
+          <p class="text-[#64748B] text-[22px]">
+            ${job.role}
+          </p>
+        </div>
+        <div class="delete-btn cursor-pointer" data-id="${job.id}">
+        </div>
+      </div>
+
+      <p class="text-[#64748B] text-[20px] my-5">
+        ${job.location} • ${job.type} • ${job.salary}
+      </p>
+
+      <div class="w-[113px] h-9 bg-[#EEF4FF] rounded flex justify-center items-center font-semibold text-[14px] text-[#002C5C]">
+        ${job.status}
+      </div>
+
+      <p class="text-[#323B49] text-[20px] my-5">
+        ${job.description}
+      </p>
+
+      <div class="w-[232px] flex justify-between">
+        <button class="interview-btn btn btn-outline btn-accent" data-id="${job.id}">
+          INTERVIEW
+        </button>
+
+        <button class="reject-btn btn btn-outline btn-error" data-id="${job.id}">
+          REJECTED
+        </button>
+      </div>
     `;
 
-    section.appendChild(div);
+    section.appendChild(card);
   });
 }

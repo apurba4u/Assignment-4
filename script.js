@@ -129,8 +129,8 @@ document.getElementById("all").addEventListener("click", function (e) {
     if (rIndex !== -1) rejectedJobs.splice(rIndex, 1);
 
     createJob(jobs);
-    createInterview();   // 👈 যোগ করো
-    createRejected();    // 👈 যোগ করো
+    createInterview();
+    createRejected();
     updateJobCount();
   }
 
@@ -149,7 +149,7 @@ document.getElementById("all").addEventListener("click", function (e) {
         interviewJobs.push(job);
       }
       createJob(jobs);
-      createInterview();   // 👈 এটা যোগ করো
+      createInterview();
       createRejected();
       updateJobCount();   
     }
@@ -170,7 +170,7 @@ document.getElementById("all").addEventListener("click", function (e) {
         rejectedJobs.push(job);
       }
       createJob(jobs);
-      createInterview();   // 👈 এটা যোগ করো
+      createInterview();
       createRejected();
       updateJobCount();    
     }

@@ -26,6 +26,11 @@ function createJob(jobsArray) {
   const section = document.getElementById("all");
   section.innerHTML = "";
 
+  if (!jobsArray || jobsArray.length === 0) {
+    showEmpty("all");
+    return;
+  }
+
   jobsArray.forEach((job) => {
     const card = document.createElement("div");
     card.className = "w-full my-4 bg-white p-6";

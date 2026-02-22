@@ -20,15 +20,15 @@
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
       <div class="max-w-[360px] h-[97px] p-5 rounded-lg bg-white">
         <p class="text-[14px] font-medium text-[#323B49]">Total</p>
-        <h2 class="font-bold text-[31px] mt-1.5">8</h2>
+        <h2 id="main1" class="font-bold text-[31px] mt-1.5"></h2>
       </div>
       <div class="max-w-[360px] h-[97px] p-5 rounded-lg bg-white">
         <p class="text-[14px] font-medium text-[#323B49]">Interview</p>
-        <h2 class="font-bold text-[31px] mt-1.5 text-[#10B981]">0</h2>
+        <h2 id="main2" class="font-bold text-[31px] mt-1.5 text-[#10B981]"></h2>
       </div>
       <div class="max-w-[360px] h-[97px] p-5 rounded-lg bg-white">
         <p class="text-[14px] font-medium text-[#323B49]">Rejected</p>
-        <h2 class="font-bold text-[31px] mt-1.5 text-[#EF4444]">0</h2>
+        <h2 id="main3" class="font-bold text-[31px] mt-1.5 text-[#EF4444]"></h2>
       </div>
     </div>
   </header>
@@ -36,7 +36,7 @@
   <div class="max-w-[1110px] mx-auto mt-18"> 
     <div class="w-full flex justify-between items-center">
       <h1 class="font-medium text-[26px]">Available Jobs</h1>
-      <p id="cnt1" class="font-medium text-[#64748B]">8 Jobs</p>
+      <p id="cnt1" class="font-medium text-[#64748B]"></p>
     </div>
     <div class="mt-6 flex justify-start">
       <button onclick="showOnly('all')" id="btn1" class="btn btn-outline mr-2 border-0">All</button>
@@ -49,18 +49,8 @@
   </section>
 
   <section id="interview" class="hidden max-w-[1110px] h-100 mx-auto mb-[133px] text-center py-26 bg-white">
-    <div class="w-full flex justify-center">
-      <img src="./jobs.png" alt="">
-    </div>
-    <h2 class="font-semibold text-[32px] text-[#002C5C]">No jobs available</h2>
-    <p class="text-[22px] text-[#64748B]">Check back soon for new job opportunities</p>
   </section>
   <section id="rejected" class="max-w-[1110px] h-100 mx-auto mb-[133px] text-center py-26 bg-white hidden">
-    <div class="w-full flex justify-center">
-      <img src="./jobs.png" alt="">
-    </div>
-    <h2 class="font-semibold text-[32px] text-[#002C5C]">No jobs available</h2>
-    <p class="text-[22px] text-[#64748B]">Check back soon for new job opportunities</p>
   </section>
   <script src="./machine.js"></script>
   <script src="./script.js"></script>

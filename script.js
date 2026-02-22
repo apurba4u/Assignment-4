@@ -102,6 +102,9 @@ let rejectedJobs = [];
 
 function updateJobCount() {
   document.querySelector("#cnt1").textContent = `${jobs.length} jobs`;
+  document.querySelector("#main1").textContent = `${jobs.length}`;
+  document.querySelector("#main2").textContent = `${interviewJobs.length}`;
+  document.querySelector("#main3").textContent = `${rejectedJobs.length}`;
 }
 document.getElementById("all").addEventListener("click", function (e) {
 
@@ -126,6 +129,8 @@ document.getElementById("all").addEventListener("click", function (e) {
     if (rIndex !== -1) rejectedJobs.splice(rIndex, 1);
 
     createJob(jobs);
+    createInterview();   // 👈 যোগ করো
+    createRejected();    // 👈 যোগ করো
     updateJobCount();
   }
 
@@ -143,8 +148,10 @@ document.getElementById("all").addEventListener("click", function (e) {
       if (!interviewJobs.some(j => j.id === id)) {
         interviewJobs.push(job);
       }
-
       createJob(jobs);
+      createInterview();   // 👈 এটা যোগ করো
+      createRejected();
+      updateJobCount();   
     }
   }
 
@@ -162,13 +169,16 @@ document.getElementById("all").addEventListener("click", function (e) {
       if (!rejectedJobs.some(j => j.id === id)) {
         rejectedJobs.push(job);
       }
-
       createJob(jobs);
+      createInterview();   // 👈 এটা যোগ করো
+      createRejected();
+      updateJobCount();    
     }
   }
 
 });
-document.querySelector("#cnt1").textContent = `${jobs.length} jobs`
+
 createJob(jobs)
+createInterview()
+createRejected()
 updateJobCount();
-console.log(jobs.length);

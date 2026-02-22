@@ -1,16 +1,26 @@
 function showOnly(id) {
-  const interview = document.querySelector("#interview")
-  const all = document.querySelector("#all")
-  const rejected = document.querySelector("#rejected")
-  
-  // shobai k hide kore dao
-  interview.classList.add('hidden')
-  all.classList.add('hidden')
-  rejected.classList.add('hidden')
+  const interview = document.querySelector("#interview");
+  const all = document.querySelector("#all");
+  const rejected = document.querySelector("#rejected");
 
-  // id wala ta ke show koro tumi
+  interview.classList.add("hidden");
+  all.classList.add("hidden");
+  rejected.classList.add("hidden");
+
   const selected = document.querySelector(`#${id}`);
-  selected.classList.remove('hidden')
+  selected.classList.remove("hidden");
+
+  if (id === "all") {
+    document.querySelector("#cnt1").textContent = `${jobs.length} jobs`;
+  }
+
+  if (id === "interview") {
+    document.querySelector("#cnt1").textContent = `${interviewJobs.length} of ${jobs.length} jobs`;
+  }
+
+  if (id === "rejected") {
+    document.querySelector("#cnt1").textContent = `${rejectedJobs.length} of ${jobs.length} jobs`;
+  }
 }
 function createJob(jobsArray) {
   const section = document.getElementById("all");
@@ -61,4 +71,66 @@ function createJob(jobsArray) {
     section.appendChild(card);
   });
 }
+function showEmpty(sectionId) {
+  const section = document.getElementById(sectionId);
 
+  section.innerHTML = `
+    <div id="common" class="text-center my-10">
+      <div class="w-full flex justify-center">
+        <img src="./jobs.png" alt="">
+      </div>
+      <h2 class="font-semibold text-[32px] text-[#002C5C]">
+        No jobs available
+      </h2>
+      <p class="text-[22px] text-[#64748B]">
+        Check back soon for new job opportunities
+      </p>
+    </div>
+  `;
+}
+function createInterview() {
+  const section = document.getElementById("interview");
+
+  if (interviewJobs.length === 0) {
+    showEmpty("interview");
+    return;
+  }
+
+  section.innerHTML = "";
+
+  interviewJobs.forEach(job => {
+    const div = document.createElement("div");
+    div.className = "w-full my-4 bg-white p-6";
+
+    div.innerHTML = `
+      <h2 class="text-xl font-bold">${job.company}</h2>
+      <p>${job.role}</p>
+      <p class="text-green-600 font-semibold">${job.status}</p>
+    `;
+
+    section.appendChild(div);
+  });
+}
+function createRejected() {
+  const section = document.getElementById("rejected");
+
+  if (rejectedJobs.length === 0) {
+    showEmpty("rejected");
+    return;
+  }
+
+  section.innerHTML = "";
+
+  rejectedJobs.forEach(job => {
+    const div = document.createElement("div");
+    div.className = "w-full my-4 bg-white p-6";
+
+    div.innerHTML = `
+      <h2 class="text-xl font-bold">${job.company}</h2>
+      <p>${job.role}</p>
+      <p class="text-red-600 font-semibold">${job.status}</p>
+    `;
+
+    section.appendChild(div);
+  });
+}
